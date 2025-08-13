@@ -72,7 +72,7 @@ class TFRobertaEmbeddings(keras.layers.Layer):
     def __init__(self, config, **kwargs):
         super().__init__(**kwargs)
 
-        self.padding_idx = 1
+        self.padding_idx = config.pad_token_id
         self.config = config
         self.hidden_size = config.hidden_size
         self.max_position_embeddings = config.max_position_embeddings
